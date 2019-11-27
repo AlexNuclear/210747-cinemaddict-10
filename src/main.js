@@ -18,8 +18,8 @@ const getFilmCardTemplate = () => {
         <button class="film-card__controls-item button film-card__controls-item--favorite">Mark as favorite</button>
       </form>
     </article>
-  `)
-}
+  `);
+};
 
 const getPopUpTemplate = () => {
   return (`
@@ -108,8 +108,8 @@ const getPopUpTemplate = () => {
         
       </form>
     </section>
-  `)
-}
+  `);
+};
 
 const getMenuTemplate = () => {
   return (`
@@ -126,14 +126,14 @@ const getMenuTemplate = () => {
       <li><a href="#" class="sort__button">Sort by date</a></li>
       <li><a href="#" class="sort__button">Sort by rating</a></li>
     </ul>
-  `)
-}
+  `);
+};
 
 const getShowMoreBtnTemplate = () => {
   return (`
     <button class="films-list__show-more">Show more</button>
   `)
-}
+};
 
 const getProfileStatusTemplate = () => {
   return (`
@@ -141,28 +141,28 @@ const getProfileStatusTemplate = () => {
       <p class="profile__rating">Movie Buff</p>
       <img class="profile__avatar" src="images/bitmap@2x.png" alt="Avatar" width="35" height="35">
     </section>
-  `)
-}
+  `);
+};
 
-const render = (container, template, place = 'beforeend') => {
+const render = (container, template, place = `beforeend`) => {
   container.insertAdjacentHTML(place, template)
-}
+};
 
-const $siteHeader = document.querySelector('.header')
-const $siteMain = document.querySelector('.main')
+const $siteHeader = document.querySelector(`.header`);
+const $siteMain = document.querySelector(`.main`);
 
-render($siteHeader, getProfileStatusTemplate())
-render($siteMain, getMenuTemplate(), 'afterbegin')
+render($siteHeader, getProfileStatusTemplate());
+render($siteMain, getMenuTemplate(), `afterbegin`);
 
-const $filmsContainer = $siteMain.querySelector('.films-list__container')
+const $filmsContainer = $siteMain.querySelector(`.films-list__container`);
 
 new Array(FILMS_COUNT)
 .fill('')
 .forEach(() => {
   render($filmsContainer,getFilmCardTemplate())
-})
+});
 
-render($siteMain, getShowMoreBtnTemplate())
+render($siteMain, getShowMoreBtnTemplate());
 
-const $footer = document.querySelector('.footer')
-render($footer, getPopUpTemplate(), 'afterend')
+const $footer = document.querySelector(`.footer`);
+render($footer, getPopUpTemplate(), `afterend`);
