@@ -1,3 +1,4 @@
+`use strict`
 const FILMS_COUNT = 5;
 const getFilmCardTemplate = () => {
   return (`
